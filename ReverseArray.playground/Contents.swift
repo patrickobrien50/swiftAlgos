@@ -6,12 +6,14 @@ import UIKit
 var myArray = [1,2,3,4,5,6,7,8,9]
 //myArray.reverse()
 
-func reverseArray(array: [Int]) -> [Int]{
-    var array: [Int] = array
+func reverseArray(array: [Int]) -> [Any]{
+    var array: [Any] = array
     var index = 0
-    let count = array.count
-    while index < count / 2{
-        (array[index], array[count - index]) = (array[count - index], array[index])
+    let count = array.count - 1
+    while index < count {
+        if array[index] as! Int > array[1] as! Int{
+            array[index] = "big"
+        }
         index += 1
     }
     return array
